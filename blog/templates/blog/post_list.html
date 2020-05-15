@@ -7,17 +7,13 @@
             <h1><a href="/">Pregnant-in-a-Pandemic Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 2020-05-14, 00:00</p>
-            <h2><a href="">Post 1</a></h2>
-            <p>I am pregnant during a pandemic.  After figuring out how to get regular prenatal checkups, how to order essential baby stuff, and how to keep sane and healthy during a prolonged lockdown, I am now trying to learn a new skill--web development!  Whatup, Miss Vanjie!</p>
-        </div>
-
-        <div>
-            <p>published: 2020-05-14, 00:01</p>
-            <h2><a href="">Post 2</a></h2>
-            <p>Some days, you can't be productive because you're too tired, too swollen, or too...pregnant.  For those days, RuPaul's Drag Race has got your back.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date}}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
 
